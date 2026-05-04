@@ -1,7 +1,28 @@
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const HomePage = () => {
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const revealItems = document.querySelectorAll('.landing .reveal')
+    if (!revealItems.length) return undefined
+
+    const observer = new IntersectionObserver(
+      (entries, observerInstance) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observerInstance.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    revealItems.forEach((item) => observer.observe(item))
+    return () => observer.disconnect()
+  }, [])
 
   const handleAccess = () => {
     navigate('/search')
@@ -88,18 +109,33 @@ const HomePage = () => {
           <div className="features-grid">
             <article className="feature-card reveal">
               <span className="feature-index">01</span>
-              <h3>Live market pulse</h3>
-              <p>Monitor macro, sector, and single name shifts without swapping screens.</p>
+              <h3>AI smart search</h3>
+              <p>Find the right product fast with natural-language search and guided hints.</p>
             </article>
             <article className="feature-card reveal">
               <span className="feature-index">02</span>
-              <h3>Signal-grade alerts</h3>
-              <p>Set triggers by momentum, sentiment, and volatility with zero noise.</p>
+              <h3>Deals radar</h3>
+              <p>Surface trending offers and hot drops with curated deal carousels.</p>
             </article>
             <article className="feature-card reveal">
               <span className="feature-index">03</span>
-              <h3>Decision briefs</h3>
-              <p>Generate a shareable brief with context, chart, and next step in one click.</p>
+              <h3>Price alerts</h3>
+              <p>Set target prices and get notified the moment a match hits your range.</p>
+            </article>
+            <article className="feature-card reveal">
+              <span className="feature-index">04</span>
+              <h3>Price history charts</h3>
+              <p>Track the full pricing curve with clean charts and tooltips.</p>
+            </article>
+            <article className="feature-card reveal">
+              <span className="feature-index">05</span>
+              <h3>Verified reviews</h3>
+              <p>Read trusted creator feedback, ratings, and highlights in one place.</p>
+            </article>
+            <article className="feature-card reveal">
+              <span className="feature-index">06</span>
+              <h3>Multi-language + currency</h3>
+              <p>Switch languages and currencies instantly without losing context.</p>
             </article>
           </div>
         </div>
