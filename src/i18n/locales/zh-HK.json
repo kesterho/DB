@@ -1,7 +1,7 @@
 {
   "app": {
-    "name": "Finder",
-    "tagline": "幫助玩家慳錢",
+    "name": "Active Market Tracking",
+    "tagline": "Built for you.",
     "heroEyebrow": "為預算玩家而生",
     "heroTitle": "Finder",
     "heroSubtitle": "AI 省錢遊戲裝備搜尋",
@@ -41,8 +41,8 @@
   "home": {
     "popularCategories": "熱門分類",
     "hotDeals": "熱賣優惠",
-    "trendingDeals": "趨勢優惠",
-    "trendingSubtitle": "過去 24 小時市場變化",
+      "name": "Active Market Tracking",
+      "tagline": "Built for you.",
     "howTitle": "Finder 如何幫你省錢",
     "stepSearch": "搜尋",
     "stepSearchText": "輸入你需要的遊戲裝備。",
