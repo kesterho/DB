@@ -1,16 +1,73 @@
-# React + Vite
+# Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI-powered product finder for budget gamers. Finder helps players in Hong Kong and the US find value peripherals and hardware with live pricing signals, verified reviews, and multilingual support.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- AI-assisted search suggestions and smart hints
+- Hot deals carousel, trending products, and live market changes
+- Product detail pages with image carousel, price history charts, and reviews
+- Dark/light mode with persisted preferences
+- Multi-language UI (English, Traditional Chinese, Simplified Chinese, Spanish, French)
+- HKD and USD pricing conversion
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React + Vite
+- React Router v6
+- Recharts for charts
+- Swiper for carousels
+- react-i18next for localization
+- Supabase for price alert storage
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Install dependencies
+
+```
+npm install
+```
+
+2. Create a local env file
+
+```
+.env
+```
+
+Required variables:
+
+- VITE_SUPABASE_URL
+- VITE_SUPABASE_ANON_KEY
+- VITE_OPENROUTER_API_KEY
+- VITE_OPENROUTER_MODEL (set to minimax/minimax-m2.5:free)
+
+3. Run the dev server
+
+```
+npm run dev
+```
+
+## Supabase table
+
+Create a table called price_alerts with the following columns:
+
+- product_id (text)
+- email (text, nullable)
+- target_price_hkd (numeric)
+- currency (text)
+- created_at (timestamptz)
+
+If the table is missing, the price alert form will show an error message.
+
+## Scripts
+
+- npm run dev
+- npm run build
+- npm run preview
+
+## Project structure
+
+- src/data/mockData.js - mock products, reviews, and price history
+- src/pages - Home, Search, Deals, Product Detail, Settings
+- src/components - shared UI components
+- src/i18n - translation files
