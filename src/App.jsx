@@ -14,6 +14,7 @@ const HomePage = lazy(() => import('./pages/HomePage'))
 const SearchResultsPage = lazy(() => import('./pages/SearchResultsPage'))
 const ProductDetailPage = lazy(() => import('./pages/ProductDetailPage'))
 const DealsPage = lazy(() => import('./pages/DealsPage'))
+const AuthPage = lazy(() => import('./pages/AuthPage'))
 const SettingsPage = lazy(() => import('./pages/SettingsPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 
@@ -109,6 +110,7 @@ function App() {
             <Route path="/search" element={<SearchResultsPage />} />
             <Route path="/product/:productId" element={<ProductDetailPage />} />
             <Route path="/deals" element={<DealsPage />} />
+            <Route path="/auth" element={<AuthPage />} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

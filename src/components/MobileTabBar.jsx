@@ -1,4 +1,4 @@
-import { Home, Search, Tag, Settings } from 'lucide-react'
+import { Home, Search, Tag, Settings, User } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -22,6 +22,10 @@ const MobileTabBar = () => {
       <NavLink to="/settings">
         <Settings size={18} />
         <span>{t('nav.settings')}</span>
+      </NavLink>
+      <NavLink to="/auth">
+        <User size={18} />
+        <span>{t('nav.account')}</span>
       </NavLink>
     </nav>
   )

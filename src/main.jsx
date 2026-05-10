@@ -9,15 +9,18 @@ import 'swiper/css/pagination'
 import App from './App.jsx'
 import { PreferencesProvider } from './context/PreferencesContext'
 import { MarketProvider } from './context/MarketContext'
+import { AuthProvider } from './context/AuthContext'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <PreferencesProvider>
-      <MarketProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </MarketProvider>
-    </PreferencesProvider>
+    <AuthProvider>
+      <PreferencesProvider>
+        <MarketProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </MarketProvider>
+      </PreferencesProvider>
+    </AuthProvider>
   </StrictMode>
 )

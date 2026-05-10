@@ -57,6 +57,9 @@ const Header = () => {
         <NavLink to="/settings" onClick={() => setOpen(false)}>
           {t('nav.settings')}
         </NavLink>
+        <NavLink to="/auth" onClick={() => setOpen(false)}>
+          {t('nav.account')}
+        </NavLink>
         <div className="nav-search mobile-only">
           <SearchBar onSubmit={handleSearch} />
         </div>

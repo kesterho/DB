@@ -1,11 +1,15 @@
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import { usePreferences } from '../context/PreferencesContext'
+import { useAuth } from '../context/AuthContext'
 import LanguageSelector from '../components/LanguageSelector'
 import CurrencyToggle from '../components/CurrencyToggle'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 const SettingsPage = () => {
   const { t } = useTranslation()
   const { theme, setTheme } = usePreferences()
+  const { user, loading } = useAuth()
 
   return (
     <main className="page">
@@ -47,6 +51,31 @@ const SettingsPage = () => {
             <div className="settings-card glass">
               <h3>{t('settings.currency')}</h3>
               <CurrencyToggle />
+            </div>
+
+            <div className="settings-card glass">
+              <h3>{t('auth.title')}</h3>
+              {loading ? (
+                <LoadingSpinner label={t('states.loading')} />
+              ) : user ? (
+                <>
+                  <p className="section-subtitle">
+                    {t('auth.statusSignedIn', {
+                      email: user.email || t('auth.unknownUser')
+                    })}
+                  </p>
+                  <Link className="btn secondary" to="/auth">
+                    {t('auth.manageAccount')}
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <p className="section-subtitle">{t('auth.statusSignedOut')}</p>
+                  <Link className="btn primary" to="/auth">
+                    {t('auth.loginAction')}
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
