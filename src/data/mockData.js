@@ -37,18 +37,50 @@ const computeTrend = (history) => {
 
 const baseProducts = [
   {
-    id: 'mouse-aurora-x1',
-    name: 'Aurora X1 Lightweight Gaming Mouse',
-    brand: 'Vexel',
+    id: 'mouse-logitech-g-pro-x2-superstrike',
+    name: 'Logitech G Pro X2 Superstrike',
+    brand: 'Logitech',
     category: 'Mice',
-    priceHKD: 289,
-    originalPriceHKD: 399,
-    rating: 4.6,
-    ratingsCount: 1420,
-    description: 'Ultra-light honeycomb shell with 26K sensor and crisp clicks.',
-    specs: ['58g weight', '26K DPI sensor', 'Paracord cable', '6 buttons'],
+    priceHKD: 1240,
+    originalPriceHKD: 1240,
+    rating: 5.0,
+    ratingsCount: 1476,
+    description: 'S-Tier (boardzy), "Generational leap with analog switches" (PCGamer), "New competitive standard" (Optimum)',
+    specs: [
+      'HERO 2 44K',
+      '60g',
+      '8000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $159.00 (New Release)'
+    ],
     images: [
       'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-01T08:00:00Z'
+  },
+  {
+    id: 'mouse-razer-viper-v4-pro',
+    name: 'Razer Viper V4 Pro',
+    brand: 'Razer',
+    category: 'Mice',
+    priceHKD: 1318,
+    originalPriceHKD: 1318,
+    rating: 5.0,
+    ratingsCount: 1464,
+    description: 'S-Tier (boardzy), "Unrivalled build quality" (PCGamer), "Best for pure performance" (Optimum)',
+    specs: [
+      'Focus Pro 50K Gen-3',
+      '49g',
+      '8000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $169.00 (New Release)'
+    ],
+    images: [
       'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80',
       'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80'
     ],
@@ -56,28 +88,1357 @@ const baseProducts = [
       { label: 'Amazon US', url: 'https://www.amazon.com' },
       { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
     ],
-    createdAt: '2025-11-12T08:00:00Z'
+    createdAt: '2026-03-02T08:00:00Z'
   },
   {
-    id: 'mouse-ignite-pro',
-    name: 'Ignite Pro Wireless Mouse',
-    brand: 'Helix',
+    id: 'mouse-razer-deathadder-v3-pro',
+    name: 'Razer DeathAdder V3 Pro',
+    brand: 'Razer',
     category: 'Mice',
-    priceHKD: 529,
-    originalPriceHKD: 699,
-    rating: 4.4,
-    ratingsCount: 960,
-    description: 'Low-latency wireless mouse with adjustable RGB and grippy sides.',
-    specs: ['2.4GHz wireless', '24K DPI', '70-hour battery', 'Charging dock'],
+    priceHKD: 1162,
+    originalPriceHKD: 1162,
+    rating: 5.0,
+    ratingsCount: 1440,
+    description: 'A-Tier (boardzy), "Best ergonomic shape" (RJN), "Flawless performance" (Optimum)',
+    specs: [
+      'Focus Pro 30K',
+      '63g',
+      '4000Hz (w/ dongle)',
+      '2.4GHz/Wired',
+      '12-mo price: $129.00 - $149.00 (Sales down to $119)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-03T08:00:00Z'
+  },
+  {
+    id: 'mouse-logitech-g-pro-x-superlight-2',
+    name: 'Logitech G Pro X Superlight 2',
+    brand: 'Logitech',
+    category: 'Mice',
+    priceHKD: 1162,
+    originalPriceHKD: 1240,
+    rating: 4.5,
+    ratingsCount: 1428,
+    description: 'S-Tier (boardzy), "Safe shape, amazing battery" (Optimum), "Top tier for FPS" (Tom\'s Hardware)',
+    specs: [
+      'HERO 2',
+      '60g',
+      '8000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $129.00 - $159.00'
+    ],
     images: [
       'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80',
       'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80'
     ],
     buyLinks: [
       { label: 'Amazon US', url: 'https://www.amazon.com' },
-      { label: 'HK Golden', url: 'https://www.goldenshop.com.hk' }
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
     ],
-    createdAt: '2026-01-08T08:00:00Z'
+    createdAt: '2026-03-04T08:00:00Z'
+  },
+  {
+    id: 'mouse-endgame-gear-op1-8k',
+    name: 'Endgame Gear OP1 8k',
+    brand: 'Endgame Gear',
+    category: 'Mice',
+    priceHKD: 585,
+    originalPriceHKD: 585,
+    rating: 5.0,
+    ratingsCount: 1476,
+    description: 'S-Tier (boardzy), "Absolute best overall right now for claw" (Reddit/Community consensus), "Flawless clicks" (Optimum)',
+    specs: [
+      'PAW3395',
+      '50.5g',
+      '8000Hz',
+      'Wired',
+      '12-mo price: $74.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-05T08:00:00Z'
+  },
+  {
+    id: 'mouse-ninjutso-sora-v2',
+    name: 'Ninjutso Sora V2',
+    brand: 'Ninjutso',
+    category: 'Mice',
+    priceHKD: 780,
+    originalPriceHKD: 780,
+    rating: 4.5,
+    ratingsCount: 1428,
+    description: 'A-Tier (boardzy), "Incredible weight for no holes" (Optimum), "Amazing for claw grip" (RJN)',
+    specs: [
+      'PAW3395',
+      '39g',
+      'up to 8000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $99.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-06T08:00:00Z'
+  },
+  {
+    id: 'mouse-wlmouse-beastx',
+    name: 'WLMouse BeastX',
+    brand: 'WLMouse',
+    category: 'Mice',
+    priceHKD: 1084,
+    originalPriceHKD: 1084,
+    rating: 5.0,
+    ratingsCount: 1440,
+    description: 'S-Tier (boardzy), "Magnesium king, beats Starlight" (Optimum), "Premium unboxing and feel"',
+    specs: [
+      'PAW3395',
+      '39g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $139.00 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-07T08:00:00Z'
+  },
+  {
+    id: 'mouse-lamzu-maya-x',
+    name: 'Lamzu Maya X',
+    brand: 'Lamzu',
+    category: 'Mice',
+    priceHKD: 936,
+    originalPriceHKD: 936,
+    rating: 5.0,
+    ratingsCount: 1440,
+    description: 'S-Tier (boardzy), "Perfect shape for fingertip/claw" (Optimum), "Great value and build"',
+    specs: [
+      'PAW3395',
+      '45g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $119.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-08T08:00:00Z'
+  },
+  {
+    id: 'mouse-razer-viper-v3-pro',
+    name: 'Razer Viper V3 Pro',
+    brand: 'Razer',
+    category: 'Mice',
+    priceHKD: 1248,
+    originalPriceHKD: 1248,
+    rating: 5.0,
+    ratingsCount: 1452,
+    description: 'S-Tier (boardzy), "Safe symmetrical shape, top tech" (Optimum), "Excellent click latency"',
+    specs: [
+      'Focus Pro 35K',
+      '54g',
+      '8000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $149.99 - $159.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-09T08:00:00Z'
+  },
+  {
+    id: 'mouse-vaxee-np-01s-wireless',
+    name: 'Vaxee NP-01S Wireless',
+    brand: 'Vaxee',
+    category: 'Mice',
+    priceHKD: 936,
+    originalPriceHKD: 936,
+    rating: 4.5,
+    ratingsCount: 1416,
+    description: 'S-Tier (boardzy), "Best build quality, unique ergo-sym shape" (Optimum), "Top tier CS/Val mouse"',
+    specs: [
+      'PAW3395',
+      '68g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $119.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-10T08:00:00Z'
+  },
+  {
+    id: 'mouse-zowie-u2',
+    name: 'Zowie U2',
+    brand: 'Zowie',
+    category: 'Mice',
+    priceHKD: 1014,
+    originalPriceHKD: 1014,
+    rating: 4.5,
+    ratingsCount: 1404,
+    description: 'A-Tier (boardzy), "Great side curves for claw" (Optimum), "Zowie finally goes modern"',
+    specs: [
+      'PAW3395',
+      '60g',
+      '1000Hz',
+      '2.4GHz/Wired (Enhanced Receiver)',
+      '12-mo price: $129.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-11T08:00:00Z'
+  },
+  {
+    id: 'mouse-pulsar-xlite-v3',
+    name: 'Pulsar Xlite V3',
+    brand: 'Pulsar',
+    category: 'Mice',
+    priceHKD: 780,
+    originalPriceHKD: 780,
+    rating: 4.5,
+    ratingsCount: 1404,
+    description: 'A-Tier (boardzy), "Excellent EC clone, great coating" (Optimum), "Solid ergo choice"',
+    specs: [
+      'PAW3395',
+      '55g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $99.95 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-12T08:00:00Z'
+  },
+  {
+    id: 'mouse-vaxee-outset-ax-wireless',
+    name: 'Vaxee Outset AX Wireless',
+    brand: 'Vaxee',
+    category: 'Mice',
+    priceHKD: 936,
+    originalPriceHKD: 936,
+    rating: 4.5,
+    ratingsCount: 1392,
+    description: 'B-Tier (boardzy), "Incredible for tilt-grip ergo" (Optimum), "Built like a tank"',
+    specs: [
+      'PAW3395',
+      '73g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $119.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-13T08:00:00Z'
+  },
+  {
+    id: 'mouse-scyrox-v8',
+    name: 'Scyrox V8',
+    brand: 'Scyrox',
+    category: 'Mice',
+    priceHKD: 546,
+    originalPriceHKD: 546,
+    rating: 4.5,
+    ratingsCount: 1428,
+    description: 'S-Tier (boardzy), "Crazy specs for the price" (Community), "Insane lightweight performance"',
+    specs: [
+      'PAW3395',
+      '36g',
+      '8000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $65.00 - $69.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-14T08:00:00Z'
+  },
+  {
+    id: 'mouse-finalmouse-ultralightx',
+    name: 'Finalmouse UltralightX',
+    brand: 'Finalmouse',
+    category: 'Mice',
+    priceHKD: 1474,
+    originalPriceHKD: 1474,
+    rating: 4.5,
+    ratingsCount: 1416,
+    description: 'S-Tier (boardzy), "Lightest solid feel" (Optimum), "Availability issues hinder it" (RJN)',
+    specs: [
+      'PAW3950',
+      '40g',
+      '8000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $189.00 (Often scalped higher)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-15T08:00:00Z'
+  },
+  {
+    id: 'mouse-lamzu-atlantis-mini-pro',
+    name: 'Lamzu Atlantis Mini Pro',
+    brand: 'Lamzu',
+    category: 'Mice',
+    priceHKD: 780,
+    originalPriceHKD: 780,
+    rating: 4.5,
+    ratingsCount: 1416,
+    description: 'A-Tier (boardzy), "God tier for claw grip" (Optimum), "Amazing aesthetic and clicks"',
+    specs: [
+      'PAW3395',
+      '51g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $89.99 - $99.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-16T08:00:00Z'
+  },
+  {
+    id: 'mouse-endgame-gear-xm2we',
+    name: 'Endgame Gear XM2we',
+    brand: 'Endgame Gear',
+    category: 'Mice',
+    priceHKD: 624,
+    originalPriceHKD: 624,
+    rating: 4.5,
+    ratingsCount: 1380,
+    description: 'B-Tier (boardzy), "Best coating, perfect claw shape" (Optimum), "Optical switches are stiff"',
+    specs: [
+      'PAW3370',
+      '63g',
+      '1000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $79.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-17T08:00:00Z'
+  },
+  {
+    id: 'mouse-asus-rog-keris-ii-ace',
+    name: 'Asus ROG Keris II Ace',
+    brand: 'Asus ROG',
+    category: 'Mice',
+    priceHKD: 1248,
+    originalPriceHKD: 1248,
+    rating: 4.5,
+    ratingsCount: 1392,
+    description: 'B-Tier (boardzy), "Specs pro gamers need" (PCMag), "Great optical switches"',
+    specs: [
+      'AimPoint Pro 42K',
+      '54g',
+      '8000Hz/4000Hz',
+      'Tri-mode',
+      '12-mo price: $149.99 - $159.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-18T08:00:00Z'
+  },
+  {
+    id: 'mouse-angry-miao-am-infinity-97',
+    name: 'Angry Miao AM Infinity .97',
+    brand: 'Angry Miao',
+    category: 'Mice',
+    priceHKD: 1318,
+    originalPriceHKD: 1318,
+    rating: 4.5,
+    ratingsCount: 1404,
+    description: '"Premium magnesium without holes" (Reviews), "Hot-swap battery is genius"',
+    specs: [
+      'PAW3950 30K',
+      '47g',
+      '8000Hz',
+      'Tri-mode',
+      '12-mo price: $169.00 (New Release)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-19T08:00:00Z'
+  },
+  {
+    id: 'mouse-razer-basilisk-v3-pro-35k',
+    name: 'Razer Basilisk V3 Pro 35K',
+    brand: 'Razer',
+    category: 'Mice',
+    priceHKD: 1248,
+    originalPriceHKD: 1248,
+    rating: 4.5,
+    ratingsCount: 1380,
+    description: '"Best Overall non-FPS" (Tom\'s Hardware), "Heavy but feature-packed"',
+    specs: [
+      'Focus Pro 35K',
+      '112g',
+      '8000Hz',
+      'Tri-mode',
+      '12-mo price: $159.99 (New Release)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-20T08:00:00Z'
+  },
+  {
+    id: 'mouse-corsair-katar-pro-xt',
+    name: 'Corsair Katar Pro XT',
+    brand: 'Corsair',
+    category: 'Mice',
+    priceHKD: 273,
+    originalPriceHKD: 312,
+    rating: 4.0,
+    ratingsCount: 1236,
+    description: '"Best lightweight budget options" (Addictive Tips), "Cheap but effective"',
+    specs: [
+      'PMW3391',
+      '73g',
+      '1000Hz',
+      'Wired',
+      '12-mo price: $29.99 - $39.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-21T08:00:00Z'
+  },
+  {
+    id: 'mouse-g-wolves-hts-plus-4k',
+    name: 'G-Wolves HTS Plus 4K',
+    brand: 'G-Wolves',
+    category: 'Mice',
+    priceHKD: 1240,
+    originalPriceHKD: 1240,
+    rating: 4.5,
+    ratingsCount: 1392,
+    description: 'B-Tier (boardzy), "Amazing shape but expensive" (Optimum), "QC can be hit or miss"',
+    specs: [
+      'PAW3395',
+      '49g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $139.00 - $159.00'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-22T08:00:00Z'
+  },
+  {
+    id: 'mouse-razer-deathadder-v3-hyperspeed',
+    name: 'Razer DeathAdder V3 Hyperspeed',
+    brand: 'Razer',
+    category: 'Mice',
+    priceHKD: 780,
+    originalPriceHKD: 780,
+    rating: 4.5,
+    ratingsCount: 1404,
+    description: 'A-Tier (boardzy), "More affordable V3 Pro" (PCMag), "Great battery life"',
+    specs: [
+      'Focus Pro 26K',
+      '55g',
+      '1000Hz',
+      '2.4GHz',
+      '12-mo price: $89.99 - $99.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-23T08:00:00Z'
+  },
+  {
+    id: 'mouse-vaxee-xe-wireless',
+    name: 'Vaxee XE Wireless',
+    brand: 'Vaxee',
+    category: 'Mice',
+    priceHKD: 936,
+    originalPriceHKD: 936,
+    rating: 4.5,
+    ratingsCount: 1380,
+    description: 'B-Tier (boardzy), "Jack of all trades shape" (Optimum), "Impeccable QC"',
+    specs: [
+      'PAW3395',
+      '76g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $119.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-24T08:00:00Z'
+  },
+  {
+    id: 'mouse-pulsar-x2v2',
+    name: 'Pulsar X2V2',
+    brand: 'Pulsar',
+    category: 'Mice',
+    priceHKD: 780,
+    originalPriceHKD: 780,
+    rating: 4.5,
+    ratingsCount: 1392,
+    description: 'A-Tier (boardzy), "Optical switches fix double clicking" (Optimum), "Safe symm shape"',
+    specs: [
+      'PAW3395',
+      '53g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $99.95 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-25T08:00:00Z'
+  },
+  {
+    id: 'mouse-pulsar-x2h',
+    name: 'Pulsar X2H',
+    brand: 'Pulsar',
+    category: 'Mice',
+    priceHKD: 780,
+    originalPriceHKD: 780,
+    rating: 4.5,
+    ratingsCount: 1392,
+    description: 'A-Tier (boardzy), "High hump for aggressive claw" (Optimum), "Great coating"',
+    specs: [
+      'PAW3395',
+      '54g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $99.95 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-26T08:00:00Z'
+  },
+  {
+    id: 'mouse-pwnage-stormbreaker',
+    name: 'Pwnage Stormbreaker',
+    brand: 'Pwnage',
+    category: 'Mice',
+    priceHKD: 1318,
+    originalPriceHKD: 1318,
+    rating: 4.5,
+    ratingsCount: 1356,
+    description: 'B-Tier (boardzy), "Magnesium ergo is rare" (Optimum), "Sensor position adjustment is neat"',
+    specs: [
+      'PAW3395',
+      '51g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $149.00 - $169.00'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-27T08:00:00Z'
+  },
+  {
+    id: 'mouse-zowie-ec2-cw',
+    name: 'Zowie EC2-CW',
+    brand: 'Zowie',
+    category: 'Mice',
+    priceHKD: 936,
+    originalPriceHKD: 1170,
+    rating: 4.5,
+    ratingsCount: 1368,
+    description: 'B-Tier (boardzy), "The king of ergo shapes" (RJN), "Tech is outdated for the price"',
+    specs: [
+      'PAW3370',
+      '77g',
+      '1000Hz',
+      '2.4GHz/Wired (Enhanced Receiver)',
+      '12-mo price: $119.99 - $149.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-28T08:00:00Z'
+  },
+  {
+    id: 'mouse-logitech-g502-x-plus',
+    name: 'Logitech G502 X Plus',
+    brand: 'Logitech',
+    category: 'Mice',
+    priceHKD: 1248,
+    originalPriceHKD: 1248,
+    rating: 4.5,
+    ratingsCount: 1356,
+    description: '"Best RGB Gaming Mouse" (Tom\'s Hardware), "Impeccable ergonomics for productivity/casual"',
+    specs: [
+      'HERO 25K',
+      '106g',
+      '1000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $129.99 - $159.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-29T08:00:00Z'
+  },
+  {
+    id: 'mouse-zaopin-z1-pro',
+    name: 'Zaopin Z1 Pro',
+    brand: 'Zaopin',
+    category: 'Mice',
+    priceHKD: 390,
+    originalPriceHKD: 390,
+    rating: 4.5,
+    ratingsCount: 1368,
+    description: 'B-Tier (boardzy), "Incredible budget egg shape" (Optimum), "Orochi V2 killer"',
+    specs: [
+      'PAW3395',
+      '46g',
+      '1000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $46.99 - $49.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-30T08:00:00Z'
+  },
+  {
+    id: 'mouse-mchose-g3-v2-pro',
+    name: 'Mchose G3 V2 Pro',
+    brand: 'Mchose',
+    category: 'Mice',
+    priceHKD: 359,
+    originalPriceHKD: 390,
+    rating: 4.5,
+    ratingsCount: 1356,
+    description: '"Best budget wireless" (PCGamer), "Worthy successor to G305"',
+    specs: [
+      'PAW3395',
+      '59g',
+      '1000Hz',
+      'Tri-mode',
+      '12-mo price: $39.99 - $49.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-03-31T08:00:00Z'
+  },
+  {
+    id: 'mouse-glorious-model-o-eternal',
+    name: 'Glorious Model O Eternal',
+    brand: 'Glorious',
+    category: 'Mice',
+    priceHKD: 312,
+    originalPriceHKD: 312,
+    rating: 4.0,
+    ratingsCount: 1260,
+    description: '"Best budget wired" (PCGamer), "Lightweight, comfortable frame"',
+    specs: [
+      'PAW3311',
+      '55g',
+      '1000Hz',
+      'Wired',
+      '12-mo price: $39.99 (New Release)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-01T08:00:00Z'
+  },
+  {
+    id: 'mouse-redragon-m686-vampire-elite',
+    name: 'Redragon M686 Vampire Elite',
+    brand: 'Redragon',
+    category: 'Mice',
+    priceHKD: 351,
+    originalPriceHKD: 390,
+    rating: 4.0,
+    ratingsCount: 1200,
+    description: '"Best budget wireless" (Tom\'s Hardware), "Heavy but cheap"',
+    specs: [
+      'PMW3335',
+      '120g',
+      '1000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $39.99 - $49.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-02T08:00:00Z'
+  },
+  {
+    id: 'mouse-razer-naga-v2-pro',
+    name: 'Razer Naga V2 Pro',
+    brand: 'Razer',
+    category: 'Mice',
+    priceHKD: 1404,
+    originalPriceHKD: 1404,
+    rating: 4.5,
+    ratingsCount: 1344,
+    description: '"Best MMO Mouse" (Tom\'s Hardware), "Swappable side panels are unmatched"',
+    specs: [
+      'Focus Pro 30K',
+      '134g',
+      '1000Hz',
+      'Tri-mode',
+      '12-mo price: $159.99 - $179.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-03T08:00:00Z'
+  },
+  {
+    id: 'mouse-razer-cobra-pro',
+    name: 'Razer Cobra Pro',
+    brand: 'Razer',
+    category: 'Mice',
+    priceHKD: 1014,
+    originalPriceHKD: 1014,
+    rating: 4.0,
+    ratingsCount: 1320,
+    description: '"Best compact" (Tom\'s Hardware), "Viper Mini replacement but heavier and pricey"',
+    specs: [
+      'Focus Pro 30K',
+      '77g',
+      '4000Hz',
+      'Tri-mode',
+      '12-mo price: $119.99 - $129.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-04T08:00:00Z'
+  },
+  {
+    id: 'mouse-wlmouse-sword-x',
+    name: 'WLMouse Sword X',
+    brand: 'WLMouse',
+    category: 'Mice',
+    priceHKD: 1084,
+    originalPriceHKD: 1084,
+    rating: 4.5,
+    ratingsCount: 1380,
+    description: 'B-Tier (boardzy), "Premium alloy build" (Optimum), "Slightly controversial shape"',
+    specs: [
+      'PAW3395',
+      '47g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $139.00 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-05T08:00:00Z'
+  },
+  {
+    id: 'mouse-atk-f1-extreme',
+    name: 'ATK F1 Extreme',
+    brand: 'ATK',
+    category: 'Mice',
+    priceHKD: 585,
+    originalPriceHKD: 616,
+    rating: 4.5,
+    ratingsCount: 1416,
+    description: 'S-Tier (boardzy), "Insane value for top tier specs", "Viper Mini shape perfected"',
+    specs: [
+      'PAW3950',
+      '38g',
+      '8000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $69.00 - $79.00'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-06T08:00:00Z'
+  },
+  {
+    id: 'mouse-g-wolves-hati-s-ultra',
+    name: 'G-Wolves Hati S Ultra',
+    brand: 'G-Wolves',
+    category: 'Mice',
+    priceHKD: 1084,
+    originalPriceHKD: 1162,
+    rating: 4.5,
+    ratingsCount: 1404,
+    description: 'S-Tier (boardzy), "Fingertip endgame for many", "Software still clunky"',
+    specs: [
+      'PAW3395',
+      '48g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $129.00 - $149.00'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-07T08:00:00Z'
+  },
+  {
+    id: 'mouse-roccat-kone-xp-air',
+    name: 'Roccat Kone XP Air',
+    brand: 'Roccat',
+    category: 'Mice',
+    priceHKD: 1014,
+    originalPriceHKD: 1326,
+    rating: 4.0,
+    ratingsCount: 1296,
+    description: '"Best for Comfort" (Addictive Tips), "Great dock and RGB, heavy for competitive"',
+    specs: [
+      'Owl-Eye 19K',
+      '99g',
+      '1000Hz',
+      'Tri-mode',
+      '12-mo price: $99.99 - $169.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-08T08:00:00Z'
+  },
+  {
+    id: 'mouse-steelseries-aerox-5-wireless',
+    name: 'SteelSeries Aerox 5 Wireless',
+    brand: 'SteelSeries',
+    category: 'Mice',
+    priceHKD: 1092,
+    originalPriceHKD: 1092,
+    rating: 4.0,
+    ratingsCount: 1272,
+    description: '"Best RGB Gaming Mouse" (Addictive Tips), "Good shape, switches could be better"',
+    specs: [
+      'TrueMove Air',
+      '74g',
+      '1000Hz',
+      'Tri-mode',
+      '12-mo price: $99.99 - $139.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-09T08:00:00Z'
+  },
+  {
+    id: 'mouse-fantech-helios-2-pro-s',
+    name: 'Fantech Helios 2 Pro S',
+    brand: 'Fantech',
+    category: 'Mice',
+    priceHKD: 702,
+    originalPriceHKD: 702,
+    rating: 4.5,
+    ratingsCount: 1380,
+    description: 'A-Tier (boardzy), "Great S2 clone, excellent opticals", "Sleeper hit"',
+    specs: [
+      'PAW3395',
+      '55g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $79.99 - $89.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-10T08:00:00Z'
+  },
+  {
+    id: 'mouse-hyperx-pulsefire-haste-2',
+    name: 'HyperX Pulsefire Haste 2',
+    brand: 'HyperX',
+    category: 'Mice',
+    priceHKD: 390,
+    originalPriceHKD: 468,
+    rating: 4.0,
+    ratingsCount: 1320,
+    description: '"Excellent budget wired" (PCMag), "Great value, flat shape"',
+    specs: [
+      'Custom 26K',
+      '53g',
+      '8000Hz',
+      'Wired',
+      '12-mo price: $39.99 - $59.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-11T08:00:00Z'
+  },
+  {
+    id: 'mouse-8bitdo-retro-r8',
+    name: '8BitDo Retro R8',
+    brand: '8BitDo',
+    category: 'Mice',
+    priceHKD: 390,
+    originalPriceHKD: 390,
+    rating: 4.0,
+    ratingsCount: 1260,
+    description: '"Nostalgic shape, surprisingly good tech" (PCMag), "Fun but not competitive"',
+    specs: [
+      'PAW3395',
+      '76.5g',
+      '1000Hz',
+      'Tri-mode',
+      '12-mo price: $49.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-12T08:00:00Z'
+  },
+  {
+    id: 'mouse-turtle-beach-kone-ii',
+    name: 'Turtle Beach Kone II',
+    brand: 'Turtle Beach',
+    category: 'Mice',
+    priceHKD: 546,
+    originalPriceHKD: 546,
+    rating: 4.0,
+    ratingsCount: 1272,
+    description: '"Comfortable mid-range mouse" (PCMag), "Hefty but feature-rich"',
+    specs: [
+      'Owl-Eye 26K',
+      '89g',
+      '1000Hz',
+      'Wired',
+      '12-mo price: $69.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-13T08:00:00Z'
+  },
+  {
+    id: 'mouse-zowie-s2-dw',
+    name: 'Zowie S2 DW',
+    brand: 'Zowie',
+    category: 'Mice',
+    priceHKD: 1014,
+    originalPriceHKD: 1014,
+    rating: 4.5,
+    ratingsCount: 1416,
+    description: 'S-Tier (boardzy), "The legendary shape finally wireless", "Heavy compared to modern mice but perfect balance"',
+    specs: [
+      'PAW3395',
+      '65g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $129.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-14T08:00:00Z'
+  },
+  {
+    id: 'mouse-logitech-g203-lightsync',
+    name: 'Logitech G203 Lightsync',
+    brand: 'Logitech',
+    category: 'Mice',
+    priceHKD: 234,
+    originalPriceHKD: 312,
+    rating: 4.0,
+    ratingsCount: 1284,
+    description: '"Best Budget Alternative" (Addictive Tips), "Classic egg shape, wire is stiff"',
+    specs: [
+      'Mercury',
+      '85g',
+      '1000Hz',
+      'Wired',
+      '12-mo price: $19.99 - $39.99'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-15T08:00:00Z'
+  },
+  {
+    id: 'mouse-asus-rog-harpe-ace-extreme',
+    name: 'Asus ROG Harpe Ace Extreme',
+    brand: 'Asus ROG',
+    category: 'Mice',
+    priceHKD: 1950,
+    originalPriceHKD: 1950,
+    rating: 4.5,
+    ratingsCount: 1380,
+    description: 'B-Tier (boardzy), "Carbon-fiber ultra-light, extremely expensive" (Tom\'s), "Niche luxury"',
+    specs: [
+      'AimPoint Pro 42K',
+      '47g',
+      '8000Hz',
+      'Tri-mode',
+      '12-mo price: $249.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-16T08:00:00Z'
+  },
+  {
+    id: 'mouse-xtrfy-m64-pro',
+    name: 'Xtrfy M64 Pro',
+    brand: 'Xtrfy',
+    category: 'Mice',
+    priceHKD: 928,
+    originalPriceHKD: 928,
+    rating: 4.5,
+    ratingsCount: 1356,
+    description: 'B-Tier (boardzy), "Unique ergo approach", "Front-heavy feeling"',
+    specs: [
+      'PAW3395',
+      '55g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $119.00 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-17T08:00:00Z'
+  },
+  {
+    id: 'mouse-zowie-za13-dw',
+    name: 'Zowie ZA13 DW',
+    brand: 'Zowie',
+    category: 'Mice',
+    priceHKD: 1014,
+    originalPriceHKD: 1014,
+    rating: 4.5,
+    ratingsCount: 1404,
+    description: 'A-Tier (boardzy), "Unmatched high rear hump", "Claw grip paradise"',
+    specs: [
+      'PAW3395',
+      '65g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $129.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-18T08:00:00Z'
+  },
+  {
+    id: 'mouse-pulsar-crazylight-x2',
+    name: 'Pulsar Crazylight X2',
+    brand: 'Pulsar',
+    category: 'Mice',
+    priceHKD: 936,
+    originalPriceHKD: 936,
+    rating: 4.5,
+    ratingsCount: 1428,
+    description: 'S-Tier (boardzy), "Pulsar\'s best coating and weight reduction", "Premium feel"',
+    specs: [
+      'PAW3395',
+      '48g',
+      '4000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $119.95 (New Release)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-19T08:00:00Z'
+  },
+  {
+    id: 'mouse-hitscan-hyperlight',
+    name: 'Hitscan Hyperlight',
+    brand: 'Hitscan',
+    category: 'Mice',
+    priceHKD: 858,
+    originalPriceHKD: 858,
+    rating: 4.5,
+    ratingsCount: 1416,
+    description: 'S-Tier (boardzy), "Incredible Starlight alternative", "Top tier performance"',
+    specs: [
+      'PAW3395',
+      '39g',
+      '8000Hz',
+      '2.4GHz/Wired',
+      '12-mo price: $109.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1611734828917-718c8465f2d6?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-20T08:00:00Z'
+  },
+  {
+    id: 'mouse-waizowl-ogm-pro',
+    name: 'Waizowl OGM Pro',
+    brand: 'Waizowl',
+    category: 'Mice',
+    priceHKD: 780,
+    originalPriceHKD: 780,
+    rating: 4.5,
+    ratingsCount: 1380,
+    description: 'A-Tier (boardzy), "Incredibly comfortable soft ergo", "Unique coating"',
+    specs: [
+      'PAW3395',
+      '68g',
+      '1000Hz',
+      'Tri-mode',
+      '12-mo price: $99.99 (Stable)'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80'
+    ],
+    buyLinks: [
+      { label: 'Amazon US', url: 'https://www.amazon.com' },
+      { label: 'HK Fortress', url: 'https://www.fortress.com.hk' }
+    ],
+    createdAt: '2026-04-21T08:00:00Z'
   },
   {
     id: 'keyboard-neon-tkl',
@@ -410,26 +1771,6 @@ const baseProducts = [
     createdAt: '2026-02-12T08:00:00Z'
   },
   {
-    id: 'mouse-shadow-mini',
-    name: 'Shadow Mini Travel Mouse',
-    brand: 'Vexel',
-    category: 'Mice',
-    priceHKD: 159,
-    originalPriceHKD: 219,
-    rating: 4.0,
-    ratingsCount: 300,
-    description: 'Compact mouse for laptop setups and LAN travel.',
-    specs: ['Compact', 'Silent clicks', 'Bluetooth', 'Battery saver'],
-    images: [
-      'https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=80'
-    ],
-    buyLinks: [
-      { label: 'Amazon US', url: 'https://www.amazon.com' },
-      { label: 'HK Golden', url: 'https://www.goldenshop.com.hk' }
-    ],
-    createdAt: '2025-12-05T08:00:00Z'
-  },
-  {
     id: 'keyboard-pulse-75',
     name: 'Pulse 75 Wireless Keyboard',
     brand: 'NovaType',
@@ -510,26 +1851,6 @@ const baseProducts = [
     createdAt: '2026-02-20T08:00:00Z'
   },
   {
-    id: 'mouse-vertex-elite',
-    name: 'Vertex Elite Esports Mouse',
-    brand: 'Helix',
-    category: 'Mice',
-    priceHKD: 799,
-    originalPriceHKD: 999,
-    rating: 4.8,
-    ratingsCount: 1640,
-    description: 'Tournament-ready mouse with elite sensor and balanced weight.',
-    specs: ['63g weight', '26K DPI', 'Optical switches', 'PTFE feet'],
-    images: [
-      'https://images.unsplash.com/photo-1556400764-0b420855b0f0?auto=format&fit=crop&w=900&q=80'
-    ],
-    buyLinks: [
-      { label: 'Amazon US', url: 'https://www.amazon.com' },
-      { label: 'HK 2000Fun', url: 'https://www.2000fun.com' }
-    ],
-    createdAt: '2025-11-30T08:00:00Z'
-  },
-  {
     id: 'keyboard-lumen-mini',
     name: 'Lumen Mini 60% Keyboard',
     brand: 'KeyNova',
@@ -563,13 +1884,13 @@ const products = baseProducts.map((product) => {
 const reviews = [
   {
     id: 'review-01',
-    productId: 'mouse-aurora-x1',
+    productId: 'mouse-logitech-g-pro-x2-superstrike',
     creator: 'PixelHunt',
     avatar: 'https://i.pravatar.cc/80?img=12',
     rating: 5,
     createdAt: '2026-03-10T12:00:00Z',
     verified: true,
-    text: 'Super light and the clicks feel premium. I have been using it for two weeks and tracking aim routines daily. Battery life is great and the cable is flexible enough for quick flicks. The coating has stayed grippy even with long sessions.'
+    text: 'Super light and the clicks feel premium. Tracking is rock solid in aim routines, and the coating stays grippy through long sessions.'
   },
   {
     id: 'review-02',
@@ -693,13 +2014,13 @@ const reviews = [
   },
   {
     id: 'review-14',
-    productId: 'mouse-ignite-pro',
+    productId: 'mouse-razer-viper-v4-pro',
     creator: 'AimTheory',
     avatar: 'https://i.pravatar.cc/80?img=18',
     rating: 5,
     createdAt: '2026-03-12T12:00:00Z',
     verified: true,
-    text: 'The sensor tracking is solid and I love the dock. Best wireless value I have tried.'
+    text: 'The sensor tracking is locked in and the build quality feels top tier. Best pure performance wireless I have tried.'
   },
   {
     id: 'review-15',
