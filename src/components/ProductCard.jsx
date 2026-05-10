@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom'
-import { TrendingDown, TrendingUp } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+import { Heart, TrendingDown, TrendingUp } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { formatPrice } from '../utils/formatters'
+import { useAuth } from '../context/AuthContext'
 import { usePreferences } from '../context/PreferencesContext'
+import { useWishlist } from '../context/WishlistContext'
 import RatingStars from './RatingStars'
 import Sparkline from './Sparkline'
 import LazyImage from './LazyImage'
@@ -11,6 +13,9 @@ import Badge from './Badge'
 const ProductCard = ({ product, layout = 'grid' }) => {
   const { currency, language } = usePreferences()
   const { t } = useTranslation()
+  const { user } = useAuth()
+  const { isWishlisted, isPending, toggleWishlist } = useWishlist()
+  const navigate = useNavigate()
   const discount =
     ((product.originalPriceHKD - product.priceHKD) / product.originalPriceHKD) * 100
   const trendDirection = product.trend.change24h >= 0 ? 'up' : 'down'
@@ -18,6 +23,25 @@ const ProductCard = ({ product, layout = 'grid' }) => {
   const TrendIcon = trendIcon
   const trendLabel =
     trendDirection === 'up' ? t('labels.trendUp') : t('labels.trendDown')
+  const wishlisted = isWishlisted(product.id)
+  const pending = isPending(product.id)
+  const wishlistLabel = user
+    ? wishlisted
+      ? t('wishlist.saved')
+      : t('wishlist.add')
+    : t('wishlist.loginToSave')
+
+  const handleWishlistClick = (event) => {
+    event.preventDefault()
+    event.stopPropagation()
+
+    if (!user) {
+      navigate('/auth')
+      return
+    }
+
+    toggleWishlist(product.id)
+  }
 
   return (
     <Link to={`/product/${product.id}`} className={`product-card ${layout}`}>
@@ -30,6 +54,17 @@ const ProductCard = ({ product, layout = 'grid' }) => {
         {discount >= 15 ? (
           <Badge label={`${Math.round(discount)}%`} variant="success" />
         ) : null}
+        <button
+          className={`wishlist-button compact ${wishlisted ? 'active' : ''}`}
+          type="button"
+          onClick={handleWishlistClick}
+          disabled={pending}
+          aria-pressed={wishlisted}
+          aria-label={wishlistLabel}
+          title={wishlistLabel}
+        >
+          <Heart size={16} className="wishlist-icon" />
+        </button>
       </div>
       <div className="product-body">
         <div className="product-header">

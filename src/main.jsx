@@ -10,17 +10,20 @@ import App from './App.jsx'
 import { PreferencesProvider } from './context/PreferencesContext'
 import { MarketProvider } from './context/MarketContext'
 import { AuthProvider } from './context/AuthContext'
+import { WishlistProvider } from './context/WishlistContext'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-      <PreferencesProvider>
-        <MarketProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </MarketProvider>
-      </PreferencesProvider>
+      <WishlistProvider>
+        <PreferencesProvider>
+          <MarketProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </MarketProvider>
+        </PreferencesProvider>
+      </WishlistProvider>
     </AuthProvider>
   </StrictMode>
 )

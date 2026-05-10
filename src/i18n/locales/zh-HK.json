@@ -13,6 +13,7 @@
     "home": "首頁",
     "search": "搜尋",
     "deals": "優惠",
+    "wishlist": "願望清單",
     "settings": "設定",
     "account": "帳戶",
     "openMenu": "打開選單",
@@ -89,6 +90,18 @@
     "problemOne": "大品牌令鍵盤、滑鼠、耳機價格飆升",
     "problemTwo": "花大量時間搜尋仍然買到壞優惠",
     "problemThree": "不少玩家因裝備太貴而錯過機會"
+  },
+  "wishlist": {
+    "title": "願望清單",
+    "subtitle": "已儲存的商品。",
+    "emptyTitle": "尚未有願望清單",
+    "emptyBody": "點擊愛心儲存商品。",
+    "signInTitle": "登入以儲存願望清單",
+    "signInBody": "建立帳戶即可跨裝置保存。",
+    "signInAction": "登入",
+    "add": "加入願望清單",
+    "saved": "已儲存",
+    "loginToSave": "登入後儲存"
   },
   "product": {
     "priceHistory": "價格走勢",

@@ -13,6 +13,7 @@
     "home": "首页",
     "search": "搜索",
     "deals": "优惠",
+    "wishlist": "心愿单",
     "settings": "设置",
     "account": "账户",
     "openMenu": "打开菜单",
@@ -89,6 +90,18 @@
     "problemOne": "大品牌让键盘、鼠标、耳机价格飙升",
     "problemTwo": "花大量时间搜索仍然买到坏优惠",
     "problemThree": "不少玩家因装备太贵而错过机会"
+  },
+  "wishlist": {
+    "title": "心愿单",
+    "subtitle": "已保存的商品。",
+    "emptyTitle": "还没有心愿单",
+    "emptyBody": "点击爱心保存商品。",
+    "signInTitle": "登录以保存心愿单",
+    "signInBody": "创建账户即可跨设备保存。",
+    "signInAction": "登录",
+    "add": "加入心愿单",
+    "saved": "已保存",
+    "loginToSave": "登录后保存"
   },
   "product": {
     "priceHistory": "价格走势",

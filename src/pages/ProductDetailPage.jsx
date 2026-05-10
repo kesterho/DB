@@ -1,9 +1,11 @@
 import { useMemo, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Heart } from 'lucide-react'
+import { useAuth } from '../context/AuthContext'
 import { useMarket } from '../context/MarketContext'
 import { usePreferences } from '../context/PreferencesContext'
+import { useWishlist } from '../context/WishlistContext'
 import { formatPrice } from '../utils/formatters'
 import ImageCarousel from '../components/ImageCarousel'
 import PriceChart from '../components/PriceChart'
@@ -17,8 +19,11 @@ import useInfiniteScroll from '../hooks/useInfiniteScroll'
 const ProductDetailPage = () => {
   const { productId } = useParams()
   const { t } = useTranslation()
+  const navigate = useNavigate()
+  const { user } = useAuth()
   const { language, currency } = usePreferences()
   const { getProductById, reviews, products } = useMarket()
+  const { isWishlisted, isPending, toggleWishlist } = useWishlist()
   const product = getProductById(productId)
 
   const [sort, setSort] = useState('relevance')
@@ -60,6 +65,23 @@ const ProductDetailPage = () => {
     )
   }
 
+  const wishlisted = isWishlisted(product.id)
+  const pending = isPending(product.id)
+  const wishlistLabel = user
+    ? wishlisted
+      ? t('wishlist.saved')
+      : t('wishlist.add')
+    : t('wishlist.loginToSave')
+
+  const handleWishlist = () => {
+    if (!user) {
+      navigate('/auth')
+      return
+    }
+
+    toggleWishlist(product.id)
+  }
+
   return (
     <main className="page">
       <section className="section product-hero">
@@ -87,6 +109,20 @@ const ProductDetailPage = () => {
                 <span>{t('product.marketChange')}</span>
                 <strong>{product.trend.change24h}%</strong>
               </div>
+            </div>
+
+            <div className="product-actions">
+              <button
+                className={`wishlist-button ${wishlisted ? 'active' : ''}`}
+                type="button"
+                onClick={handleWishlist}
+                disabled={pending}
+                aria-pressed={wishlisted}
+                title={wishlistLabel}
+              >
+                <Heart size={18} className="wishlist-icon" />
+                <span>{wishlistLabel}</span>
+              </button>
             </div>
 
             <div className="specs">

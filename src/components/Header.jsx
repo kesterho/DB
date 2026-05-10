@@ -54,6 +54,9 @@ const Header = () => {
         <NavLink to="/deals" onClick={() => setOpen(false)}>
           {t('nav.deals')}
         </NavLink>
+        <NavLink to="/wishlist" onClick={() => setOpen(false)}>
+          {t('nav.wishlist')}
+        </NavLink>
         <NavLink to="/settings" onClick={() => setOpen(false)}>
           {t('nav.settings')}
         </NavLink>

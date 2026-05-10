@@ -13,6 +13,7 @@
     "home": "Home",
     "search": "Search",
     "deals": "Deals",
+    "wishlist": "Favoritos",
     "settings": "Settings",
     "account": "Cuenta",
     "openMenu": "Open menu",
@@ -89,6 +90,18 @@
     "problemOne": "Big brands charge too much for keyboards, mice, and headsets",
     "problemTwo": "Hours of searching still leads to bad deals",
     "problemThree": "Many gamers miss out because setups are too expensive"
+  },
+  "wishlist": {
+    "title": "Lista de deseos",
+    "subtitle": "Productos guardados para seguirlos.",
+    "emptyTitle": "Aun no tienes favoritos",
+    "emptyBody": "Toca el corazon para guardar productos.",
+    "signInTitle": "Inicia sesion para guardar tu lista",
+    "signInBody": "Crea una cuenta para mantener tus favoritos.",
+    "signInAction": "Iniciar sesion",
+    "add": "Guardar en lista",
+    "saved": "Guardado",
+    "loginToSave": "Inicia sesion para guardar"
   },
   "product": {
     "priceHistory": "Price history",
