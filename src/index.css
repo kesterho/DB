@@ -1209,11 +1209,11 @@ p {
 }
 
 .product-trend.up {
-  color: var(--accent-green);
+  color: #ff6b6b;
 }
 
 .product-trend.down {
-  color: #ff6b6b;
+  color: #86ff6b;
 }
 
 .sparkline {
