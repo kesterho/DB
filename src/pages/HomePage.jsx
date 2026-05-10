@@ -1,8 +1,13 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import LoadingSpinner from '../components/LoadingSpinner'
+import { useAuth } from '../context/AuthContext'
 
 const HomePage = () => {
   const navigate = useNavigate()
+  const { t } = useTranslation()
+  const { user, loading } = useAuth()
 
   useEffect(() => {
     const revealItems = document.querySelectorAll('.landing .reveal')
@@ -26,6 +31,46 @@ const HomePage = () => {
 
   const handleAccess = () => {
     navigate('/search')
+  }
+
+  const displayName = user?.user_metadata?.username || user?.email || ''
+  const welcomeName = displayName ? `, ${displayName}` : ''
+
+  if (loading) {
+    return (
+      <main className="app">
+        <section className="section">
+          <div className="container">
+            <LoadingSpinner label={t('states.loading')} />
+          </div>
+        </section>
+      </main>
+    )
+  }
+
+  if (user) {
+    return (
+      <main className="app">
+        <section className="section">
+          <div className="container">
+            <div className="section-header">
+              <div>
+                <h2>{t('home.welcomeTitle', { name: welcomeName })}</h2>
+                <p className="section-subtitle">{t('home.welcomeSubtitle')}</p>
+              </div>
+            </div>
+            <div className="welcome-card glass">
+              <p className="welcome-message">{t('home.welcomeBody')}</p>
+              <div className="welcome-actions">
+                <button className="btn primary" type="button" onClick={handleAccess}>
+                  {t('home.startNow')}
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    )
   }
 
   return (

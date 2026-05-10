@@ -7,6 +7,7 @@ const AuthPage = () => {
   const { t } = useTranslation()
   const { user, loading, signIn, signUp, signOut } = useAuth()
   const [mode, setMode] = useState('login')
+  const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirm, setConfirm] = useState('')
@@ -40,6 +41,12 @@ const AuthPage = () => {
     }
 
     if (isRegister) {
+      if (!username.trim()) {
+        setStatus('error')
+        setMessage(t('auth.errorUsername'))
+        return
+      }
+
       if (password.length < 6) {
         setStatus('error')
         setMessage(t('auth.errorShortPassword'))
@@ -57,7 +64,7 @@ const AuthPage = () => {
     setMessage('')
 
     const result = isRegister
-      ? await signUp(email, password)
+      ? await signUp(email, password, username.trim())
       : await signIn(email, password)
 
     if (result?.error) {
@@ -93,6 +100,7 @@ const AuthPage = () => {
 
   const toggleMode = () => {
     setMode((current) => (current === 'login' ? 'register' : 'login'))
+    setUsername('')
     setConfirm('')
     resetStatus()
   }
@@ -136,6 +144,7 @@ const AuthPage = () => {
                       type="button"
                       onClick={() => {
                         setMode('login')
+                        setUsername('')
                         setConfirm('')
                         resetStatus()
                       }}
@@ -147,6 +156,7 @@ const AuthPage = () => {
                       type="button"
                       onClick={() => {
                         setMode('register')
+                        setUsername('')
                         setConfirm('')
                         resetStatus()
                       }}
@@ -156,6 +166,22 @@ const AuthPage = () => {
                   </div>
 
                   <form className="auth-form" onSubmit={handleSubmit}>
+                    {isRegister ? (
+                      <label>
+                        <span>{t('auth.usernameLabel')}</span>
+                        <input
+                          type="text"
+                          value={username}
+                          onChange={(event) => {
+                            setUsername(event.target.value)
+                            resetStatus()
+                          }}
+                          placeholder={t('auth.usernamePlaceholder')}
+                          autoComplete="username"
+                          required
+                        />
+                      </label>
+                    ) : null}
                     <label>
                       <span>{t('auth.emailLabel')}</span>
                       <input

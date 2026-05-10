@@ -1712,6 +1712,24 @@ p {
   color: #ffd6d6;
 }
 
+.welcome-card {
+  width: min(520px, 100%);
+  margin: 0 auto;
+  padding: 28px;
+  display: grid;
+  gap: 16px;
+}
+
+.welcome-message {
+  color: var(--text-muted);
+}
+
+.welcome-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 720px) {
   .auth-card {
     padding: 22px;

@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
     return supabase.auth.signInWithPassword({ email, password })
   }
 
-  const signUp = async (email, password) => {
+  const signUp = async (email, password, username) => {
     if (!supabase) {
       return { data: null, error: makeConfigError() }
     }
@@ -62,10 +62,14 @@ export const AuthProvider = ({ children }) => {
     const emailRedirectTo =
       typeof window === 'undefined' ? undefined : `${window.location.origin}/auth`
 
+    const options = {}
+    if (emailRedirectTo) options.emailRedirectTo = emailRedirectTo
+    if (username) options.data = { username }
+
     return supabase.auth.signUp({
       email,
       password,
-      options: emailRedirectTo ? { emailRedirectTo } : undefined
+      options: Object.keys(options).length ? options : undefined
     })
   }
 
