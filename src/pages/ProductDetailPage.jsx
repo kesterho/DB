@@ -15,6 +15,7 @@ import ProductCard from '../components/ProductCard'
 import PriceAlertForm from '../components/PriceAlertForm'
 import EmptyState from '../components/EmptyState'
 import useInfiniteScroll from '../hooks/useInfiniteScroll'
+import { scrapePrice } from '../utils/scraperUtils'
 
 const ProductDetailPage = () => {
   const { productId } = useParams()
@@ -28,6 +29,7 @@ const ProductDetailPage = () => {
 
   const [sort, setSort] = useState('relevance')
   const [visibleCount, setVisibleCount] = useState(6)
+  const [isScraping, setIsScraping] = useState(false)
 
   const productReviews = useMemo(() => {
     if (!product) return []
@@ -82,6 +84,27 @@ const ProductDetailPage = () => {
     toggleWishlist(product.id)
   }
 
+  const handleTrackPrice = async () => {
+    if (!product.buyLinks || product.buyLinks.length === 0) {
+      alert("No store URL available to scrape for this product.");
+      return;
+    }
+    
+    setIsScraping(true);
+    try {
+      // Use the first buy link as the URL to track
+      const targetUrl = product.buyLinks[0].url;
+      const result = await scrapePrice(targetUrl, product.id);
+      console.log('Scraped Price:', result.price, result.currency);
+      alert(`Successfully tracked live price: ${result.currency} ${result.price}`);
+    } catch (e) {
+      console.error(e);
+      alert('Failed to check live price. Make sure the Edge Function is deployed.');
+    } finally {
+      setIsScraping(false);
+    }
+  }
+
   return (
     <main className="page">
       <section className="section product-hero">
@@ -122,6 +145,16 @@ const ProductDetailPage = () => {
               >
                 <Heart size={18} className="wishlist-icon" />
                 <span>{wishlistLabel}</span>
+              </button>
+              
+              <button
+                className="btn glass"
+                type="button"
+                onClick={handleTrackPrice}
+                disabled={isScraping}
+                style={{ marginLeft: '10px' }}
+              >
+                {isScraping ? 'Checking Live Price...' : 'Check Live Price'}
               </button>
             </div>
 
