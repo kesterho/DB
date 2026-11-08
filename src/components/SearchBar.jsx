@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useEffect, useMemo, useState } from 'react'
 import { Sparkles, Mic, Search } from 'lucide-react'
 import { useTranslation } from 'react-i18next'

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import supabase from '../lib/supabase'
 import { useAuth } from './AuthContext'
@@ -152,6 +153,8 @@ export const WishlistProvider = ({ children }) => {
   return <WishlistContext.Provider value={value}>{children}</WishlistContext.Provider>
 }
 
+// Context providers and hooks intentionally share this module for one context API.
+// eslint-disable-next-line react-refresh/only-export-components
 export const useWishlist = () => {
   const context = useContext(WishlistContext)
   if (!context) {

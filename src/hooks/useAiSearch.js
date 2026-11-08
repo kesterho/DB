@@ -13,7 +13,7 @@ const useAiSearch = (products) => {
         const result = await fetchAiHints(query, products)
         setHints(result)
         setStatus('success')
-      } catch (error) {
+      } catch {
         setStatus('error')
       }
     },

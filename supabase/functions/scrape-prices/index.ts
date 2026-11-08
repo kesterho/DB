@@ -1,86 +1,93 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.38.4"
 
-// This is a Supabase Edge Function (written in Deno/TypeScript).
-// It runs securely on the backend, so your API keys are safe.
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+}
 
 serve(async (req) => {
-  try {
-    // 1. Initialize Supabase Client to talk to your database
-    // These variables are automatically injected by Supabase
-    const supabaseClient = createClient(
-      Deno.env.get('SUPABASE_URL') ?? '',
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '' // Used for bypassing row level security in the backend
-    )
+  if (req.method === "OPTIONS") {
+    return new Response("ok", { headers: corsHeaders })
+  }
 
-    // 2. Get the Firecrawl API key from secret storage
-    const firecrawlKey = Deno.env.get('FIRECRAWL_API_KEY');
-    
+  try {
+    const supabaseClient = createClient(
+      Deno.env.get("SUPABASE_URL") ?? "",
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
+    )
+    const firecrawlKey = Deno.env.get("FIRECRAWL_API_KEY")
+
     if (!firecrawlKey) {
-      throw new Error("Missing FIRECRAWL_API_KEY secret");
+      throw new Error("Missing FIRECRAWL_API_KEY secret")
     }
 
-    // 3. For this example, let's say we receive the product URL from the request
-    // (Later, you can change this to query your database for ALL products and loop through them)
-    // We expect a JSON payload like: { "url": "https://amazon.com/example", "productId": "123" }
-    const { url, productId } = await req.json()
+    const body = await req.json()
+    const url = typeof body?.url === "string" ? body.url.trim() : ""
+    const productId = typeof body?.productId === "string" ? body.productId.trim() : ""
 
-    console.log(`Starting to scrape: ${url}`);
+    if (!url || !productId) {
+      throw new Error("url and productId are required")
+    }
 
-    // 4. Call Firecrawl
-    const firecrawlResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
-      method: 'POST',
+    const parsedUrl = new URL(url)
+    if (!["http:", "https:"].includes(parsedUrl.protocol)) {
+      throw new Error("url must use http or https")
+    }
+
+    const firecrawlResponse = await fetch("https://api.firecrawl.dev/v1/scrape", {
+      method: "POST",
       headers: {
-        'Authorization': `Bearer ${firecrawlKey}`,
-        'Content-Type': 'application/json'
+        Authorization: `Bearer ${firecrawlKey}`,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        url: url,
-        formats: ['extract'],
+        url,
+        formats: ["extract"],
         extract: {
           prompt: "Extract the exact product price as a number, and the currency code.",
           schema: {
             type: "object",
             properties: {
               price: { type: "number" },
-              currency: { type: "string" }
+              currency: { type: "string" },
             },
-            required: ["price", "currency"]
-          }
-        }
-      })
-    });
+            required: ["price", "currency"],
+          },
+        },
+      }),
+    })
+    const firecrawlData = await firecrawlResponse.json()
 
-    const firecrawlData = await firecrawlResponse.json();
-
-    if (!firecrawlData.success) {
-      throw new Error("Firecrawl failed to scrape the page.");
+    if (!firecrawlResponse.ok || !firecrawlData.success) {
+      throw new Error(firecrawlData.error || "Firecrawl failed to scrape the page")
     }
 
-    const { price, currency } = firecrawlData.data.extract;
+    const { price, currency } = firecrawlData.data?.extract ?? {}
+    if (typeof price !== "number" || !Number.isFinite(price) || typeof currency !== "string") {
+      throw new Error("Firecrawl returned an invalid price")
+    }
 
-    // 5. Update the product's price in your Supabase database
     const { error: dbError } = await supabaseClient
-      .from('products')    // Assuming your table is named 'products'
-      .update({ 
-        current_price: price, 
-        currency: currency,
-        last_checked_at: new Date().toISOString()
+      .from("products")
+      .update({
+        current_price: price,
+        currency,
+        last_checked_at: new Date().toISOString(),
       })
-      .eq('id', productId);
+      .eq("id", productId)
 
-    if (dbError) throw dbError;
+    if (dbError) throw dbError
 
-    // 6. Return success!
     return new Response(
       JSON.stringify({ success: true, price, currency }),
-      { headers: { "Content-Type": "application/json" }, status: 200 }
+      { headers: { ...corsHeaders, "Content-Type": "application/json" }, status: 200 },
     )
-
   } catch (error) {
+    const message = error instanceof Error ? error.message : "Unexpected scraper error"
     return new Response(
-      JSON.stringify({ error: error.message }),
-      { headers: { "Content-Type": "application/json" }, status: 400 }
+      JSON.stringify({ error: message }),
+      { headers: { ...corsHeaders, "Content-Type": "application/json" }, status: 400 },
     )
   }
 })
