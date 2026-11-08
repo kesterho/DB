@@ -1041,6 +1041,42 @@ p {
   outline: none;
 }
 
+.preference-select {
+  position: relative;
+  padding-right: 10px;
+}
+
+.preference-select::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-left: 2px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  pointer-events: none;
+}
+
+.preference-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0 4px 0 0;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.preference-select select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.preference-select:has(select:focus-visible) {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 2px rgba(199, 164, 107, 0.2);
+}
+
 .search-suggestions {
   position: absolute;
   top: 110%;

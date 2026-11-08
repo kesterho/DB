@@ -13,7 +13,7 @@ const LanguageSelector = () => {
   const { language, setLanguage, supportedLanguages } = usePreferences()
 
   return (
-    <label className="select-field">
+    <label className="select-field preference-select">
       <Globe size={16} aria-hidden="true" />
       <select value={language} onChange={(event) => setLanguage(event.target.value)}>
         {supportedLanguages.map((code) => (

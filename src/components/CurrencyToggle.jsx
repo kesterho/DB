@@ -5,7 +5,7 @@ const CurrencyToggle = () => {
   const { currency, setCurrency } = usePreferences()
 
   return (
-    <label className="select-field">
+    <label className="select-field preference-select">
       <Coins size={16} aria-hidden="true" />
       <select value={currency} onChange={(event) => setCurrency(event.target.value)}>
         <option value="HKD">HKD</option>
