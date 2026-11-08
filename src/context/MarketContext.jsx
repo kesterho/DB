@@ -44,6 +44,8 @@ export const MarketProvider = ({ children }) => {
   return <MarketContext.Provider value={value}>{children}</MarketContext.Provider>
 }
 
+// Context providers and hooks intentionally share this module for one context API.
+// eslint-disable-next-line react-refresh/only-export-components
 export const useMarket = () => {
   const context = useContext(MarketContext)
   if (!context) {

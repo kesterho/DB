@@ -41,6 +41,12 @@ Required variables:
 - VITE_OPENROUTER_API_KEY
 - VITE_OPENROUTER_MODEL (set to minimax/minimax-m2.5:free)
 
+For the scraper Edge Function, configure the server-side secret separately:
+
+```
+supabase secrets set FIRECRAWL_API_KEY=your-key
+```
+
 3. Run the dev server
 
 ```
@@ -49,15 +55,9 @@ npm run dev
 
 ## Supabase table
 
-Create a table called price_alerts with the following columns:
-
-- product_id (text)
-- email (text, nullable)
-- target_price_hkd (numeric)
-- currency (text)
-- created_at (timestamptz)
-
-If the table is missing, the price alert form will show an error message.
+Apply the checked-in migration with `supabase db push`. It creates the
+`products`, `price_alerts`, and `wishlists` tables and their basic RLS policies.
+If these tables are missing, the related features will show errors.
 
 ## Scripts
 

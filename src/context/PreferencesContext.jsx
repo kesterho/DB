@@ -69,6 +69,8 @@ export const PreferencesProvider = ({ children }) => {
   return <PreferencesContext.Provider value={value}>{children}</PreferencesContext.Provider>
 }
 
+// Context providers and hooks intentionally share this module for one context API.
+// eslint-disable-next-line react-refresh/only-export-components
 export const usePreferences = () => {
   const context = useContext(PreferencesContext)
   if (!context) {

@@ -61,7 +61,7 @@ const fetchAiHints = async (query, products) => {
       corrected: parsed.corrected || query,
       suggestions: Array.isArray(parsed.suggestions) ? parsed.suggestions : []
     }
-  } catch (error) {
+  } catch {
     return buildFallback(query, products)
   }
 }
